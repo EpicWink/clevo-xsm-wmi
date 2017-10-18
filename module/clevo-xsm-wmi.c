@@ -630,9 +630,66 @@ static void kb_full_color__set_color(unsigned left, unsigned center,
 	kb_backlight.mode = KB_MODE_CUSTOM;
 }
 
+static void kb_full_color__precompute_brightness_levels(unsigned steps, u8 *lvl_arr) {
+	static bool precomputed = false;
+
+	/*
+	 * We need to emulate floating point calculations,
+	 * since the kernel does not provide this functionality
+	 * on all architectures and for other (good) reasons.
+	 */
+	u8 rem = 0,
+	   cur = 0,
+	   overflow = 0;
+	u32 i = 0;
+	const u8 major_step = 255 / steps,
+		 minor_step = 255 % steps;
+
+	if (precomputed) {
+		return;
+	}
+
+	for (i = 0; i < steps; ++i) {
+		cur += major_step;
+		rem += minor_step;
+
+		/* Overflow of the remainder has an immediate effect. */
+		overflow = rem / steps;
+		if (overflow) {
+			++cur;
+		}
+
+		/* Clamp rem back to the current remainder value. */
+		rem = rem % steps;
+
+		/* Round the current value based upon the remainder. */
+		if (rem > 4) {
+			++cur;
+		}
+
+		/* Just as a safety net. */
+		cur = clamp_t(unsigned, cur, 0, 255);
+
+		lvl_arr[i] = cur;
+
+		/* We need to subtract any rounding for the next iteration. */
+		if (rem > 4) {
+			--cur;
+		}
+	}
+
+	for (i = 0; i < steps; ++i) {
+		CLEVO_XSM_DEBUG("lvl_arr[%d] = %d", i, lvl_arr[i]);
+	}
+
+	precomputed = true;
+}
+
 static void kb_full_color__set_brightness(unsigned i)
 {
-	u8 lvl_to_raw[] = { 63, 126, 189, 252 };
+	static u8 lvl_to_raw[KB_BRIGHTNESS_MAX];
+
+	kb_full_color__precompute_brightness_levels(KB_BRIGHTNESS_MAX, lvl_to_raw);
 
 	i = clamp_t(unsigned, i, 0, ARRAY_SIZE(lvl_to_raw) - 1);
 
