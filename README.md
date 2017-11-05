@@ -16,7 +16,7 @@ http://www.linux-onlineshop.de/forum/index.php?page=Thread&threadID=26
 
 ### Supported Devices
 
-| Produkt Name         | Clevo Name             | TUXEDO Name            |
+| Product Name         | Clevo Name             | TUXEDO Name            |
 |----------------------|------------------------|------------------------|
 | P15SM                | Clevo P15SM            | ???                    |
 | P15SM1-A             | Clevo P15SM1-A         | ???                    |
@@ -118,7 +118,7 @@ If it returns no line such as 'clevo_xsm_wmi: Model Clevo P15SM found', then you
 Please open an issue and supply the output of 'uname -a', 'sudo dmidecode' and 'dmesg | grep clevo'.
 
 ### Pull Requests
-Please create a pull request into the testing branch. After rewiev and testing we commting in the master branch.
+Please create a pull request into the testing branch. After review and testing we are commiting in the master branch.
 
 ### License
 This program is free software;  you can redistribute it and/or modify
