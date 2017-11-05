@@ -39,6 +39,7 @@ http://www.linux-onlineshop.de/forum/index.php?page=Thread&threadID=26
 | N85_N87              | Clevo N850HJ           | TUXEDO DX1507 / DX1707 |
 | P870DM               | Clevo P870DM           | ???                    |
 | N85_N87,HJ,HJ1,HK1   | Clevo N870HK           | ???                    |
+| N85_87HP6            | Clevo N870HP6          | ???                    |
 | P95_HP,HR,HQ         | Clevo P950HP6          | ???                    |
 | P65_67HSHP           | Clevo P65_67HSHP       | ???                    |
 
