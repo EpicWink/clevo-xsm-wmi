@@ -431,7 +431,7 @@ static int clevo_xsm_wmi_evaluate_wmbb_method(u32 method_id, u32 arg,
 
 	CLEVO_XSM_DEBUG("%0#4x  IN : %0#6x\n", method_id, arg);
 
-	status = wmi_evaluate_method(CLEVO_GET_GUID, 0x01,
+	status = wmi_evaluate_method(CLEVO_GET_GUID, 0x00,
 		method_id, &in, &out);
 
 	if (unlikely(ACPI_FAILURE(status)))
@@ -1537,6 +1537,14 @@ static struct dmi_system_id clevo_xsm_dmi_table[] __initdata = {
 		.matches = {
 			DMI_MATCH(DMI_SYS_VENDOR, "ECT"),
 			DMI_MATCH(DMI_BOARD_NAME, "P750ZM"),
+		},
+		.callback = clevo_xsm_dmi_matched,
+		.driver_data = &kb_full_color_with_extra_ops,
+	},
+	{
+		.ident = "XMG A517",
+		.matches = {
+			DMI_MATCH(DMI_BOARD_NAME, "N85_87HP6"),
 		},
 		.callback = clevo_xsm_dmi_matched,
 		.driver_data = &kb_full_color_with_extra_ops,
