@@ -1547,7 +1547,7 @@ static struct dmi_system_id clevo_xsm_dmi_table[] __initdata = {
 			DMI_MATCH(DMI_BOARD_NAME, "N85_87HP6"),
 		},
 		.callback = clevo_xsm_dmi_matched,
-		.driver_data = &kb_full_color_with_extra_ops,
+		.driver_data = &kb_full_color_ops,
 	},
 	{
 		/* terminating NULL entry */
