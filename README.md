@@ -49,12 +49,6 @@ Dependencies:
 
 * standard compile stuff (c compiler, make, etc)
 * linux-headers
-* qt5-base (for utility)
-
-Fedora 22+ Dependencies:
-
-* use qmake-qt5 instead of qmake
-* install qt5-qt3d-devel with DNF
 
 Building:
 ```bash
@@ -62,9 +56,7 @@ Building:
 $ cd module && make && sudo make install
 
 # For the utility
-$ cd utility && qmake && make
-$ sudo install -Dm755 clevo-xsm-wmi /usr/bin/clevo-xsm-wmi
-$ sudo install -Dm755 systemd/clevo-xsm-wmi.service /usr/lib/systemd/system/clevo-xsm-wmi.service
+See building instruction under ui/README.md
 ```
 
 ### Usage
@@ -81,8 +73,8 @@ $ modinfo clevo-xsm-wmi
 $ sudo tee /etc/modprobe.d/clevo-xsm-wmi.conf <<< options clevo-xsm-wmi kb_color=white,white,white kb_brightness=1
 
 # With systemd:
-$ sudo systemctl enable clevo-xsm-service
-$ sudo systemctl start clevo-xsm-service
+$ sudo systemctl enable clevo-xsm-wmi
+$ sudo systemctl start clevo-xsm-wmi
 
 # With others:
 run '/usr/bin/clevo-xsm-wmi -r' at boot to restore state
