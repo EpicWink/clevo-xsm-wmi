@@ -1,3 +1,7 @@
+# The status and the future of TUXEDO / Clevo WMI
+Read this:
+https://bitbucket.org/tuxedocomputers/clevo-xsm-wmi/issues/44/the-status-and-the-future-of-tuxedo-clevo
+
 # clevo-xsm-wmi
 
 Kernel module for keyboard backlighting of Clevo SM series notebooks.
