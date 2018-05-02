@@ -1,3 +1,7 @@
+# The status and the future of TUXEDO / Clevo WMI
+Read this:
+https://bitbucket.org/tuxedocomputers/clevo-xsm-wmi/issues/44/the-status-and-the-future-of-tuxedo-clevo
+
 # clevo-xsm-wmi
 
 Kernel module for keyboard backlighting of Clevo SM series notebooks.
@@ -16,7 +20,7 @@ http://www.linux-onlineshop.de/forum/index.php?page=Thread&threadID=26
 
 ### Supported Devices
 
-| Produkt Name         | Clevo Name             | TUXEDO Name            |
+| Product Name         | Clevo Name             | TUXEDO Name            |
 |----------------------|------------------------|------------------------|
 | P15SM                | Clevo P15SM            | ???                    |
 | P15SM1-A             | Clevo P15SM1-A         | ???                    |
@@ -39,6 +43,7 @@ http://www.linux-onlineshop.de/forum/index.php?page=Thread&threadID=26
 | N85_N87              | Clevo N850HJ           | TUXEDO DX1507 / DX1707 |
 | P870DM               | Clevo P870DM           | ???                    |
 | N85_N87,HJ,HJ1,HK1   | Clevo N870HK           | ???                    |
+| N85_87HP6            | Clevo N870HP6          | ???                    |
 | P95_HP,HR,HQ         | Clevo P950HP6          | ???                    |
 | P65_67HSHP           | Clevo P65_67HSHP       | ???                    |
 
@@ -109,7 +114,7 @@ If it returns no line such as 'clevo_xsm_wmi: Model Clevo P15SM found', then you
 Please open an issue and supply the output of 'uname -a', 'sudo dmidecode' and 'dmesg | grep clevo'.
 
 ### Pull Requests
-Please create a pull request into the testing branch. After rewiev and testing we commting in the master branch.
+Please create a pull request into the testing branch. After review and testing we are commiting in the master branch.
 
 ### License
 This program is free software;  you can redistribute it and/or modify
