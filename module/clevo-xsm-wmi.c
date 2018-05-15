@@ -431,7 +431,7 @@ static int clevo_xsm_wmi_evaluate_wmbb_method(u32 method_id, u32 arg,
 
 	CLEVO_XSM_DEBUG("%0#4x  IN : %0#6x\n", method_id, arg);
 
-	status = wmi_evaluate_method(CLEVO_GET_GUID, 0x01,
+	status = wmi_evaluate_method(CLEVO_GET_GUID, 0x00,
 		method_id, &in, &out);
 
 	if (unlikely(ACPI_FAILURE(status)))
@@ -1532,6 +1532,14 @@ static struct dmi_system_id clevo_xsm_dmi_table[] __initdata = {
 		.callback = clevo_xsm_dmi_matched,
 		.driver_data = &kb_full_color_ops,
 	},
+	{
+                .ident = "Clevo P95_HP",
+                .matches = {
+                        DMI_MATCH(DMI_PRODUCT_NAME, "P95_HP"),
+                },
+                .callback = clevo_xsm_dmi_matched,
+                .driver_data = &kb_full_color_ops,
+        },
 	{
 		.ident = "Clevo N850HJ",
 		.matches = {
