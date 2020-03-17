@@ -47,6 +47,19 @@ http://www.linux-onlineshop.de/forum/index.php?page=Thread&threadID=26
 | P95_HP,HR,HQ         | Clevo P950HP6          | ???                    |
 | P65_67HSHP           | Clevo P65_67HSHP       | ???                    |
 
+### DKMS
+DKMS automatically builds and installs modules on kernel update
+```bash
+cd /usr/src && ln -s ~/src/clevo-xsm-wmi/module clevo-xsm-wmi-1.0
+sudo dkms add -m clevo-xsm-wmi -v 1.0
+```
+
+On first install, run DKMS manually
+```bash
+sudo dkms build -m clevo-xsm-wmi -v 1.0
+sudo dkms install -m clevo-xsm-wmi -v 1.0
+```
+
 ### Building
 
 Dependencies:
