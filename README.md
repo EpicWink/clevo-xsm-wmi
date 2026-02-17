@@ -1,7 +1,3 @@
-# The status and the future of TUXEDO / Clevo WMI
-Read this:
-https://bitbucket.org/tuxedocomputers/clevo-xsm-wmi/issues/44/the-status-and-the-future-of-tuxedo-clevo
-
 # clevo-xsm-wmi
 
 Kernel module for keyboard backlighting of Clevo SM series notebooks.
@@ -9,6 +5,13 @@ Kernel module for keyboard backlighting of Clevo SM series notebooks.
 
 Based upon tuxedo-wmi, created by TUXEDO Computers GmbH.
 http://www.linux-onlineshop.de/forum/index.php?page=Thread&threadID=26
+
+## Repository status
+
+The [original repository](https://bitbucket.org/tuxedocomputers/clevo-xsm-wmi) has been
+deleted, as future development occurs in
+[tuxedo-drivers](https://gitlab.com/tuxedocomputers/development/packages/tuxedo-drivers)
+and [tuxedo-control-center](https://github.com/tuxedocomputers/tuxedo-control-center).
 
 ### Additions over tuxedo-wmi
 * Sysfs interface to control the brightness, mode, colour,
